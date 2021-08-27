@@ -1,0 +1,319 @@
+@font-face {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  src: url("https://2021.igem.org/wiki/images/b/bf/T--UTokyo--fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"), url("https://2021.igem.org/wiki/images/0/01/T--UTokyo--fontawesome-webfont.woff?v=4.7.0") format("woff"), url("https://2021.igem.org/wiki/images/b/bc/T--UTokyo--fontawesome-webfont.ttf?v=4.7.0") format("truetype"), url("https://2021.igem.org/wiki/images/3/36/T--UTokyo--fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");
+}
+.fa {
+  font-family: FontAwesome;
+}
+body {
+  margin: 0;
+}
+#bodyContent {
+  font-size: 16px;
+  line-height: normal;
+}
+#bodyContent h1 {
+  padding: 0;
+  margin: 39.84px 0;
+  overflow: visible;
+}
+#bodyContent h2 {
+  padding: 0;
+  margin: 0.83em 0;
+  overflow: visible;
+}
+#bodyContent h3 {
+  padding: 0;
+  margin: 1em 0;
+  overflow: visible;
+}
+#bodyContent a {
+  color: #000;
+}
+#bodyContent a:hover {
+  text-decoration: none;
+}
+#bodyContent a:focus {
+  text-decoration: none;
+}
+#bodyContent p {
+  font-family: inherit;
+  font-size: inherit;
+  margin: 1em 0;
+}
+#bodyContent #toc,
+#bodyContent .toc {
+  border: none;
+  background-color: inherit;
+  font-size: inherit;
+}
+#bodyContent header {
+  position: fixed;
+  top: 18px;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 52px;
+  background: rgba(255,255,255,0.8);
+  box-shadow: 0px 1px 4px rgba(186,186,186,0.25);
+  backdrop-filter: blur(4px);
+/* Note: backdrop-filter has minimal browser support */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#bodyContent header a {
+  color: #000;
+  text-decoration: none;
+}
+#bodyContent header h2 {
+  margin: 0;
+  padding: 0;
+  margin-left: 12.5%;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 52px;
+}
+#bodyContent header nav {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 12.5%;
+  font-family: Roboto;
+}
+#bodyContent header nav a {
+  margin-left: 50px;
+}
+#index-main-section {
+  padding-top: 52px;
+  background-color: #fffff5;
+  height: 650px;
+  text-align: center;
+  display: flex;
+}
+#index-main-section #index-main-section-content {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+#index-main-section #index-main-section-content h1 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 72px;
+  margin-top: 203px;
+  margin-bottom: 20px;
+}
+#index-main-section #index-main-section-content h3 {
+  width: 41%;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  margin: 0 auto;
+}
+#index-main-section #index-main-section-content a {
+  display: inline-block;
+  font-family: Roboto;
+  color: #000;
+  text-decoration: none;
+  padding: 10px 15px;
+  background-color: #99c1c1;
+  border-radius: 6px;
+  margin-top: 20px;
+}
+#index-main-section #index-main-section-content a :hover {
+  color: #000;
+  text-decoration: none;
+}
+#index-main-section svg.index-back {
+  height: 702px;
+}
+.index-section {
+  position: relative;
+}
+.index-section svg.index-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 600px;
+}
+.index-normal-section {
+  height: 600px;
+  font-family: Roboto;
+  display: flex;
+  flex-direction: row;
+  padding: 60px 12.5vw;
+  box-sizing: border-box;
+}
+.index-normal-section .image-temp {
+  flex: 1;
+  background-color: #f3f3f3;
+}
+.index-normal-section .index-sec-content {
+  flex: 1;
+  font-size: 18px;
+  z-index: 1;
+}
+.index-section-odd {
+  background-color: #fffff7;
+}
+.index-section-even {
+  background-color: #d3f1fb;
+  flex-direction: row-reverse;
+}
+.index-sec-separator {
+  width: 120px;
+}
+#kingyo {
+  position: absolute;
+  top: 421px;
+  left: 5.138888888888888vw;
+  width: 7.361111111111112vw;
+  height: auto;
+}
+#bodyContent h1 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 48px;
+}
+#bodyContent h2 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+}
+#bodyContent h3 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+}
+footer {
+  background-color: #c4c4c4;
+  height: 520px;
+  padding: 0 12.5vw;
+  box-sizing: border-box;
+  font-family: Roboto;
+}
+footer #footer-inner {
+  height: 240px;
+  padding: 40px 0;
+  box-sizing: border-box;
+}
+footer #footer-inner img {
+  float: left;
+}
+footer #footer-inner h3 {
+  margin-top: 0;
+  margin-bottom: 57px;
+}
+footer #footer-inner svg {
+  margin-right: 10px;
+}
+footer #footer-inner #footer-contacts-content {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 30px;
+}
+footer #sponsors {
+  clear: both;
+  display: flex;
+  height: 160px;
+  margin: 40px 0;
+  gap: 24px;
+}
+footer #sponsors div {
+  flex: 1;
+  background-color: #e5e5e5;
+}
+footer #footer-copyright {
+  font-size: 12px;
+  height: 40px;
+  line-height: 40px;
+}
+#bodyContent .contents-wrapper {
+  margin: 90px 12.5vw;
+  display: flex;
+  font-family: Lato;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 30px;
+}
+#bodyContent .contents-wrapper .page-navigation {
+  position: fixed;
+  width: 280px;
+  margin-right: 40px;
+  background-color: #fff;
+}
+#bodyContent .contents-wrapper .page-navigation .toc-number {
+  display: none;
+}
+#bodyContent .contents-wrapper .page-navigation ol {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+#bodyContent .contents-wrapper .page-navigation .toc-child {
+  margin-left: 8px;
+}
+#bodyContent .contents-wrapper .page-navigation .toc-child li {
+  margin-top: 14px;
+}
+#bodyContent .contents-wrapper .page-navigation a {
+  color: #000;
+  text-decoration: none;
+  font-family: Roboto;
+}
+#bodyContent .contents-wrapper article.post {
+  margin-left: 320px;
+}
+#bodyContent .contents-wrapper article.post .eyecatch {
+  height: 320px;
+  background-color: #e5e5e5;
+  text-align: center;
+  line-height: 320px;
+}
+#bodyContent .contents-wrapper article.page {
+  width: 100%;
+}
+#bodyContent .contents-wrapper article.page .eyecatch {
+  height: 360px;
+  background-color: #e5e5e5;
+  text-align: center;
+  line-height: 320px;
+}
+#bodyContent .gallery {
+  font-family: Roboto;
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#bodyContent .gallery p {
+  margin: 0;
+}
+#bodyContent .gallery img {
+  width: 240px;
+  height: auto;
+}
+#bodyContent .gallery h3 {
+  margin-top: 11px;
+  margin-bottom: 10px;
+}
+#bodyContent .gallery .profile-bio {
+  font-size: 14px;
+}
+#bodyContent .gallery .profile-voice {
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 24px;
+}
