@@ -243,16 +243,18 @@ footer #footer-copyright {
 #bodyContent .contents-wrapper {
   margin: 90px 12.5vw;
   display: flex;
+  vertical-align: top;
   font-family: Lato;
   font-size: 18px;
   font-weight: 300;
   line-height: 30px;
 }
 #bodyContent .contents-wrapper .page-navigation {
-  position: fixed;
+  z-index: 0;
   width: 280px;
+  position: absolute;
   margin-right: 40px;
-  background-color: #fff;
+  background-color: #808080;
 }
 #bodyContent .contents-wrapper .page-navigation .toc-number {
   display: none;
