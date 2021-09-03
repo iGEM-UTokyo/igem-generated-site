@@ -251,8 +251,9 @@ footer #footer-copyright {
 }
 #bodyContent .contents-wrapper .page-navigation {
   z-index: 0;
+  top: 100px;
   width: 280px;
-  position: absolute;
+  position: fixed;
   margin-right: 40px;
   background-color: #808080;
 }
@@ -320,4 +321,4 @@ footer #footer-copyright {
   line-height: 24px;
 }
 
-/*1630572858749*/
+/*1630656723936*/
