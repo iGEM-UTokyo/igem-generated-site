@@ -1,2 +1,12 @@
-<html><header><h2><a href="/Team:UTokyo">UTokyo</a></h2><nav id="header-nav"><a href="/Team:UTokyo/Project">Project</a><a href="/Team:UTokyo/Model">Model</a><a href="/Team:UTokyo/Human-Practices">Human Practices</a><a href="/Team:UTokyo/Parts">Parts</a><a href="/Team:UTokyo/Team">Team</a><a href="/Team:UTokyo/Medal">Medal</a></nav></header></html>
-<!--1630657381488-->
+<html><header id="header"><h2><a href="/Team:UTokyo">UTokyo</a></h2><nav class="header-nav-pc"><a href="/Team:UTokyo/Project">Project</a><a href="/Team:UTokyo/Model">Model</a><a href="/Team:UTokyo/Human-Practices">Human Practices</a><a href="/Team:UTokyo/Parts">Parts</a><a href="/Team:UTokyo/Team">Team</a><a href="/Team:UTokyo/Medal">Medal</a></nav><nav class="header-nav-mobile" @click="toggleMenu"><span :class="{ active: !isMenuActive }"><i class="fas fa-bars"></i></span><span :class="{ active: isMenuActive }"><i class="fas fa-chevron-up"></i></span></nav><div class="header-menu" :class="{ 'header-menu-active': isMenuActive }"><a href="/Team:UTokyo/Project">Project</a><a href="/Team:UTokyo/Model">Model</a><a href="/Team:UTokyo/Human-Practices">Human Practices</a><a href="/Team:UTokyo/Parts">Parts</a><a href="/Team:UTokyo/Team">Team</a><a href="/Team:UTokyo/Medal">Medal</a></div><script>const headerApp = new Vue({
+  el: '#header',
+  data: {
+    isMenuActive: false
+  },
+  methods: {
+    toggleMenu() {
+      this.isMenuActive = !this.isMenuActive
+    }
+  }
+})</script></header></html>
+<!--1631072749540-->
