@@ -1,0 +1,40 @@
+{{Template:UTokyo/Head}}
+{{Template:UTokyo/Header}}
+<!--{{CURRENTTIME}}--><html><main><div class="contents-wrapper"><div class="page-navigation"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#What-is-Hexo"><span class="toc-number">1.</span> <span class="toc-text">What is Hexo?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-powerful-features-of-Hexo-for-iGEM"><span class="toc-number">2.</span> <span class="toc-text">The powerful features of Hexo for iGEM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Using-MediaWiki-Templates-for-partial-embedding-%E3%81%A1%E3%82%87%E3%81%A3%E3%81%A8%E6%80%AA%E3%81%97%E3%81%84"><span class="toc-number">2.1.</span> <span class="toc-text">Using MediaWiki Templates for partial embedding(ちょっと怪しい)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Providing-the-environment-very-similar-with-iGEM-server-for-local-testing-%E3%81%BE%E3%81%A0%E6%80%AA%E3%81%97%E3%81%84"><span class="toc-number">2.2.</span> <span class="toc-text">Providing the environment very similar with iGEM server for local testing. (まだ怪しい)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Changing-generated-file-structure-to-the-one-suitable-for-iGEM-server"><span class="toc-number">2.3.</span> <span class="toc-text">Changing generated file structure to the one suitable for iGEM server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploying-the-site-automatically-powered-by-iGEM-WikiSync"><span class="toc-number">2.4.</span> <span class="toc-text">Deploying the site automatically (powered by iGEM WikiSync)</span></a></li></ol></li></ol></div><article class="post"><div class="eyecatch">それっぽい画像あったら、入れると目立っていいかなと思った...</div><h1>Software</h1><p>We have developed our original deployment system for iGEM Wiki, called <strong>Hexo for iGEM</strong>.</p>
+<h2 id="What-is-Hexo"><a href="#What-is-Hexo" class="headerlink" title="What is Hexo?"></a>What is Hexo?</h2><p><a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> is one of famous static site generator(SSG)s. It allows us to write posts in Markdown format, choose cool themes and generate a site in one command <code>hexo generate</code>. There are some similar frameworks like Hexo, some of which you may know: Nuxt.js, Gatsby, Hugo, Pelican, and so on.</p>
+<h2 id="The-powerful-features-of-Hexo-for-iGEM"><a href="#The-powerful-features-of-Hexo-for-iGEM" class="headerlink" title="The powerful features of Hexo for iGEM"></a>The powerful features of Hexo for iGEM</h2><p>Hexo for iGEM is a plugin for Hexo. It revises the generating system of Hexo in order to adjust the exported site to iGEM-server environment.</p>
+<h3 id="Using-MediaWiki-Templates-for-partial-embedding-ちょっと怪しい"><a href="#Using-MediaWiki-Templates-for-partial-embedding-ちょっと怪しい" class="headerlink" title="Using MediaWiki Templates for partial embedding(ちょっと怪しい)"></a>Using MediaWiki Templates for partial embedding(ちょっと怪しい)</h3><p>If you use general SSGs, common components such as navigation bar or footer are directly embedded to each page. Thus, if you modify the content of footer just a bit, for example, <strong>you have to upload all pages again</strong>. This is a very troublesome situation. Even if you use an automated upload system like iGEM WikiSync developed by iGEM BITS Goa and your trouble is solved, <strong>iGEM server still gets many rewrite requests</strong>, which may slow iGEM server’s responses.</p>
+<p>In contrast, <strong>Hexo for iGEM is a very iGEM server-friendly system</strong>. It does not embed common components to each page directly. Instead, it uses <strong>MediaWiki Templates</strong>. For example, if you want to add footer to each page, it does not embed its HTML code, but embeds <code>&#123;&#123; Template:UTokyo/Footer &#125;&#125;</code> to the pages. Thus, it avoids repeating the same code in all pages. If you change the content of footer, all you have to do is update the template of footer.</p>
+<p>In fact, Hexo’s themes internally uses <code>_partial()</code> in order to embed some common components. Thus, we can easily adjust the exported site to iGEM server by replacing <code>_partial(&#39;something&#39;)</code> with <code>&#123;&#123; something &#125;&#125;</code>.</p>
+<h3 id="Providing-the-environment-very-similar-with-iGEM-server-for-local-testing-まだ怪しい"><a href="#Providing-the-environment-very-similar-with-iGEM-server-for-local-testing-まだ怪しい" class="headerlink" title="Providing the environment very similar with iGEM server for local testing. (まだ怪しい)"></a>Providing the environment very similar with iGEM server for local testing. (まだ怪しい)</h3><p>Sites which use Hexo is easily tested locally by the command <code>hexo server</code>. However, the environment of iGEM server is very complex and far from local testing environment. Thus, we have simulated the iGEM server environment locally. (Todo)</p>
+<h3 id="Changing-generated-file-structure-to-the-one-suitable-for-iGEM-server"><a href="#Changing-generated-file-structure-to-the-one-suitable-for-iGEM-server" class="headerlink" title="Changing generated file structure to the one suitable for iGEM server"></a>Changing generated file structure to the one suitable for iGEM server</h3><p>When you type <code>hexo generate</code>, Hexo exports the site. The exported file structure is convenient if you deploy the site to standard hosts like Netlify or GitHub Pages, but the file structure in iGEM server is different from them. Thus, Hexo for iGEM modifies the file structure after generating.</p>
+<h3 id="Deploying-the-site-automatically-powered-by-iGEM-WikiSync"><a href="#Deploying-the-site-automatically-powered-by-iGEM-WikiSync" class="headerlink" title="Deploying the site automatically (powered by iGEM WikiSync)"></a>Deploying the site automatically (powered by iGEM WikiSync)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hoge</span>():</span></span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;hoge&quot;</span>)</span><br></pre></td></tr></table></figure>
+</article></div><script>$(function(){
+  var $endPosition = $("footer"); //スクロール終了位置
+  var $wrapper = $(".contents-wrapper"); //親要素
+  var $sticked = $(".page-navigation");  //固定する要素
+  var offset = $('header').height()+15; //固定位置(top) headerの分だけ下げる
+  var sidebar_top = $wrapper.offset().top;
+  var scrollTop = $(document).scrollTop();
+  // 固定するコンテンツの元々の位置
+  var sticked_original_top = $sticked.offset().top-scrollTop;
+  // 固定するコンテンツの高さ
+  var sticked_height = $sticked.height();
+  //スクロール位置
+  
+  var scrollOffset = sticked_original_top-offset
+  $(window).on('scroll resize', function(){
+    var scrollTop = $(document).scrollTop();
+    var content_bottom = $endPosition.offset().top
+    if ((scrollTop > sticked_original_top-offset) && (scrollTop < content_bottom - sticked_height-offset)){
+    // 上部固定
+      $sticked.css({'top': offset});
+    } else if(scrollTop >= content_bottom - sticked_height-offset){
+    // 下部固定
+      $sticked.css({'top': content_bottom-scrollTop-sticked_height-5});
+    }else if(scrollTop<=sticked_original_top){
+      $sticked.css({'top': sticked_original_top-scrollTop});
+    }
+  });
+});</script></main></html>{{Template:UTokyo/Footer}}
+<!--1631768069450-->
