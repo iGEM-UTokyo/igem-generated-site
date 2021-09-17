@@ -95,6 +95,7 @@ body {
   justify-content: flex-end;
   margin-right: 12.5%;
   font-family: Roboto;
+  height: 100%;
 }
 @media (max-width: 767px) {
   #bodyContent header nav.header-nav-pc {
@@ -103,6 +104,44 @@ body {
 }
 #bodyContent header nav.header-nav-pc a {
   margin-left: 50px;
+}
+#bodyContent header nav.header-nav-pc li {
+  list-style: none;
+}
+#bodyContent header nav.header-nav-pc ul {
+  display: none;
+  margin: 0px;
+}
+#bodyContent header nav.header-nav-pc ul.active {
+  display: block;
+}
+#bodyContent header nav.header-nav-pc .menu {
+  position: relative;
+  margin: 0px;
+  height: 100%;
+}
+#bodyContent header nav.header-nav-pc .menu a,
+#bodyContent header nav.header-nav-pc .menu span {
+  padding: 0px 15px;
+  margin: 0px;
+  display: block;
+  position: relative;
+  line-height: 52px;
+  background: rgba(255,255,255,0.8);
+}
+#bodyContent header nav.header-nav-pc .menu a:hover {
+  background-color: #ffc9d7;
+}
+#bodyContent header nav.header-nav-pc .menu span:hover {
+  background-color: #ffc9d7;
+}
+#bodyContent header nav.header-nav-pc .submenu {
+  position: absolute;
+  left: 0px;
+}
+#bodyContent header nav.header-nav-pc .submenu li {
+  display: list-item;
+  margin-bottom: 0px;
 }
 #bodyContent header nav.header-nav-mobile {
   display: none;
