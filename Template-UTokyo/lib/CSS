@@ -348,7 +348,7 @@ footer #footer-copyright {
 }
 #bodyContent .contents-wrapper {
   margin: 90px 12.5vw;
-  display: flex;
+  display: block;
   vertical-align: top;
   font-family: Lato;
   font-size: 18px;
@@ -357,7 +357,7 @@ footer #footer-copyright {
 }
 #bodyContent .contents-wrapper .page-navigation {
   z-index: 0;
-  top: 100px;
+  top: 425px;
   width: 280px;
   position: fixed;
   margin-right: 40px;
@@ -382,14 +382,15 @@ footer #footer-copyright {
   text-decoration: none;
   font-family: Roboto;
 }
-#bodyContent .contents-wrapper article.post {
-  margin-left: 320px;
-}
-#bodyContent .contents-wrapper article.post .eyecatch {
+#bodyContent .contents-wrapper .eyecatch {
   height: 320px;
+  width: 100%;
   background-color: #e5e5e5;
   text-align: center;
   line-height: 320px;
+}
+#bodyContent .contents-wrapper article.post {
+  margin-left: 320px;
 }
 #bodyContent .contents-wrapper article.page {
   width: 100%;
