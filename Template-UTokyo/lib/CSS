@@ -355,11 +355,14 @@ footer #footer-copyright {
   font-weight: 300;
   line-height: 30px;
 }
+#bodyContent .contents-wrapper .article-wrapper {
+  position: relative;
+}
 #bodyContent .contents-wrapper .page-navigation {
   z-index: 0;
-  top: 425px;
+  top: 0;
   width: 280px;
-  position: fixed;
+  position: absolute;
   margin-right: 40px;
   background-color: #808080;
 }

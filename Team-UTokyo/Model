@@ -1,8 +1,8 @@
 {{Template:UTokyo/Head}}
 {{Template:UTokyo/Header}}
-<!--{{CURRENTTIME}}--><html><main><div class="contents-wrapper"><div class="page-navigation"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Oxygen-Sensing"><span class="toc-number">1.</span> <span class="toc-text">Oxygen Sensing</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Methods"><span class="toc-number">1.1.</span> <span class="toc-text">Methods</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1"><span class="toc-number">1.2.</span> <span class="toc-text">1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2"><span class="toc-number">1.3.</span> <span class="toc-text">2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3"><span class="toc-number">1.4.</span> <span class="toc-text">3</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4"><span class="toc-number">1.5.</span> <span class="toc-text">4</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5"><span class="toc-number">1.6.</span> <span class="toc-text">5</span></a></li></ol></li></ol></div><div class="eyecatch">それっぽい画像あったら、入れると目立っていいかなと思った...</div><article class="post"><h1>Model</h1><h2 id="Oxygen-Sensing"><a href="#Oxygen-Sensing" class="headerlink" title="Oxygen Sensing"></a>Oxygen Sensing</h2><h3 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h3><p>Yeasts response surrounding oxygen concentration in various ways. Transcriptional regulation by HAP factors is one of such oxygen dependant responces.</p>
+<!--{{CURRENTTIME}}--><html><main><div class="contents-wrapper"><div class="eyecatch">それっぽい画像あったら、入れると目立っていいかなと思った...</div><div class="article-wrapper"><div class="page-navigation"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Oxygen-Sensing"><span class="toc-number">1.</span> <span class="toc-text">Oxygen Sensing</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Methods"><span class="toc-number">1.1.</span> <span class="toc-text">Methods</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1"><span class="toc-number">1.2.</span> <span class="toc-text">1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2"><span class="toc-number">1.3.</span> <span class="toc-text">2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3"><span class="toc-number">1.4.</span> <span class="toc-text">3</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4"><span class="toc-number">1.5.</span> <span class="toc-text">4</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5"><span class="toc-number">1.6.</span> <span class="toc-text">5</span></a></li></ol></li></ol></div><article class="post"><h1>Model</h1><h2 id="Oxygen-Sensing"><a href="#Oxygen-Sensing" class="headerlink" title="Oxygen Sensing"></a>Oxygen Sensing</h2><h3 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h3><p>Yeasts response surrounding oxygen concentration in various ways. Transcriptional regulation by HAP factors is one of such oxygen dependant responces.</p>
 <p>HAP factors are known to regulate downstream gene transcription in collaboration with heme. They are activated when they bind to two HemeO2, the O2-binding form of heme.<br>According to this signaling pathway, we have established a model below. </p>
-<h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><h3 id="3"><a href="#3" class="headerlink" title="3"></a>3</h3><h3 id="4"><a href="#4" class="headerlink" title="4"></a>4</h3><h3 id="5"><a href="#5" class="headerlink" title="5"></a>5</h3></article></div><script>$(function(){
+<h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><h3 id="3"><a href="#3" class="headerlink" title="3"></a>3</h3><h3 id="4"><a href="#4" class="headerlink" title="4"></a>4</h3><h3 id="5"><a href="#5" class="headerlink" title="5"></a>5</h3></article></div></div><script>$(function(){
   var $endPosition = $("footer"); //スクロール終了位置
   var $wrapper = $(".contents-wrapper"); //親要素
   var $sticked = $(".page-navigation");  //固定する要素
@@ -10,23 +10,25 @@
   var sidebar_top = $wrapper.offset().top;
   var scrollTop = $(document).scrollTop();
   // 固定するコンテンツの元々の位置
-  var sticked_original_top = $sticked.offset().top-scrollTop;
+  var sticked_original_top = $sticked.parent().offset().top;
   // 固定するコンテンツの高さ
   var sticked_height = $sticked.height();
   //スクロール位置
-  
   var scrollOffset = sticked_original_top-offset
-  $(window).on('scroll resize', function(){
+
+  function updateNavigation() {
     var scrollTop = $(document).scrollTop();
     var content_bottom = $endPosition.offset().top
     if ((scrollTop > sticked_original_top-offset) && (scrollTop < content_bottom - sticked_height-offset)){
     // 上部固定
-      $sticked.css({'top': offset});
+      $sticked.css({'position': 'fixed', 'top': offset});
     } else if(scrollTop >= content_bottom - sticked_height-offset){
     // 下部固定
-      $sticked.css({'top': content_bottom-scrollTop-sticked_height-5});
-    }else if(scrollTop<=sticked_original_top){
-      $sticked.css({'top': sticked_original_top-scrollTop});
+      $sticked.css({'position': 'fixed', 'top': content_bottom-scrollTop-sticked_height-5});
+    }else if(scrollTop<=sticked_original_top - offset){
+      $sticked.css({'position': 'absolute', 'top': '0' });
     }
-  });
+  }
+  $(window).on('scroll resize', updateNavigation)
+  updateNavigation()
 });</script></main></html>{{Template:UTokyo/Footer}}
